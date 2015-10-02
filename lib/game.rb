@@ -3,6 +3,8 @@ require_relative 'computer'
 
 class Game
 
+  attr_reader :winner
+
   def initialize
     @winner = { rock: [:scissors, :lizard],
                scissors: [:paper, :lizard],
@@ -13,13 +15,13 @@ class Game
 
   def winner?(human, computer)
 
-    @winner[human.hand].include?(computer.hand)
+    winner[human.hand].include?(computer.hand)
 
   end
 
   def loser?(human, computer)
 
-    @winner[human.hand].include?(computer.hand) == false
+    winner[human.hand].include?(computer.hand) == false
 
   end
 

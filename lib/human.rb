@@ -4,6 +4,6 @@ class Human < Player
 
   def chooses(choice)
     @hand = choice
-    fail 'Invalid Choice' if options.include?(choice) == false
+    fail 'Invalid Choice' unless options.include?(choice)
   end
 end

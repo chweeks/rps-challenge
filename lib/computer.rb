@@ -2,7 +2,8 @@ require_relative 'player'
 
 class Computer < Player
 
-  def rand_choice
-    @hand = options[rand(3)]
+  def initialize
+    @options = [:rock, :paper, :scissors, :lizard, :spock]
+    @hand = options[rand(4)]
   end
 end
