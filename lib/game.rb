@@ -3,26 +3,24 @@ require_relative 'computer'
 
 class Game
 
-  def winner?(human, computer)
-
-    winner = { rock: [:scissors, :spock],
+  def initialize
+    @winner = { rock: [:scissors, :lizard],
                scissors: [:paper, :lizard],
                paper: [:rock, :spock],
                spock: [:rock, :scissors],
                lizard: [:spock, :paper] }
+  end
 
-    winner[human.hand].include?(computer.hand)
+  def winner?(human, computer)
+
+    @winner[human.hand].include?(computer.hand)
+
   end
 
   def loser?(human, computer)
 
-    loser = { rock: [:paper, :spock],
-              scissors: [:rock, :spock],
-              paper: [:scissors, :lizard],
-              spock: [:paper, :lizard],
-              lizard: [:rock, :scissors]}
+    @winner[human.hand].include?(computer.hand) == false
 
-    loser[human.hand].include?(computer.hand)
   end
 
   def draw?(human, computer)
