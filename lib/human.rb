@@ -2,7 +2,7 @@ require_relative 'player'
 
 class Human < Player
 
-  def chooses(choice)
+  def choose(choice)
     @hand = choice
     fail 'Invalid Choice' unless options.include?(choice)
   end

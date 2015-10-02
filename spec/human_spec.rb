@@ -11,15 +11,15 @@ describe Human do
 
   context '#chooses' do
 
-    it { is_expected.to respond_to :chooses }
+    it { is_expected.to respond_to :choose }
 
     it 'should change players hand' do
-      subject.chooses(:rock)
+      subject.choose(:rock)
       expect(subject.hand).to be :rock
     end
 
     it 'should raise error if choice is invalid' do
-      expect{subject.chooses(:snake)}.to raise_error 'Invalid Choice'
+      expect{subject.choose(:snake)}.to raise_error 'Invalid Choice'
     end
   end
 end
